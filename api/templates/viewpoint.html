@@ -1,0 +1,28 @@
+{% extends 'base.html'%}
+
+{% block head%} 
+    <title>客家委員會桐花景點步道</title>
+{% endblock%}
+{% block body%} 
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">景點名稱</th>
+        <th scope="col">地址</th>
+        <th scope="col">聯絡電話</th>
+        <th scope="col">備註</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for station in data %}
+        <tr>
+            <!-- <th scope="row">1</th> -->
+            <td>{{ station.viewpoint }}</td>
+            <td>{{ station.address }}</td>
+            <td>{{ station.LocalCallService }}</td>
+            <td>{{ station.memo }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+{% endblock%}
